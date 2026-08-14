@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nacos-mcp"
-version = "1.1.0"
+version = "1.1.1"
 description = "Nacos MCP Server - 配置管理 + 服务发现 + 命名空间查询，支持 Nacos 1.x/2.x"
 readme = "README.md"
 license = "MIT"
