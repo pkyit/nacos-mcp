@@ -3,16 +3,16 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jewei-mcp-nacos"
-version = "0.0.0"
-description = "MCP Server for Nacos configuration management"
+name = "nacos-mcp"
+version = "1.0.0"
+description = "Nacos MCP Server - 配置管理 + 服务发现 + 命名空间查询，支持 Nacos 1.x/2.x"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    { name = "Jeweis" }
+    { name = "pkyit" }
 ]
-keywords = ["mcp", "model-context-protocol", "nacos", "configuration"]
+keywords = ["mcp", "model-context-protocol", "nacos", "configuration", "service-discovery"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "mcp>=1.0.0",
+    "mcp>=1.0.0,<2.0",
     "httpx>=0.27.0",
     "pydantic>=2.0.0",
 ]
@@ -32,16 +32,14 @@ dependencies = [
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
-    "ruff>=0.4.0",
-    "mypy>=1.10.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/jeweis/jewei-mcp-nacos"
-Repository = "https://github.com/jeweis/jewei-mcp-nacos"
+Homepage = "https://github.com/pkyit/nacos-mcp"
+Repository = "https://github.com/pkyit/nacos-mcp"
 
 [project.scripts]
-jewei-mcp-nacos = "jewei_mcp_nacos.server:main"
+nacos-mcp = "jewei_mcp_nacos.server:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/jewei_mcp_nacos"]
@@ -49,13 +47,6 @@ packages = ["src/jewei_mcp_nacos"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "W"]
-
-[tool.mypy]
-python_version = "3.10"
-strict = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
